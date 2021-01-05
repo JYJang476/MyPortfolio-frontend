@@ -1,0 +1,96 @@
+.ContentMain {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.titleInputDiv {
+    width: 100%;
+    height: 40px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.titleInputDiv input[type=text] {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border: none;
+    line-height: 40px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 20px;
+}
+
+.usingTechDiv {
+    width: 100%;
+    height: 209px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+.utHeader {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.utContent {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.utcHeader {
+    width: 100%;
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.utcHeader div {
+    padding-left: 10px;
+    height: 70%;
+    line-height: calc(34px * 0.7);
+}
+
+.utcHeader div:nth-child(1) {
+    width: 10%;
+    border-right: 1px solid #E8E8E8;
+
+}
+
+.utcHeader div:nth-child(2) {
+    width: 90%;
+}
+
+.inputImgDiv {
+    width: 100%;
+    height: 424px;
+    margin-top: 20px;
+}
+
+.imgList {
+    width: 100%;
+    height: 82px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imeAreaDiv {
+    width: 100%;
+    height: 319px;
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}

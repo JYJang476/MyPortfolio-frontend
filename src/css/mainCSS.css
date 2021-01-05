@@ -1,0 +1,24 @@
+.mainbuttonStyle {
+    width: 150px;
+    height: 50px;
+}
+
+.subContentDiv p {
+    text-align: center;
+
+}
+
+.loginButtonDiv {
+    width: 100%;
+}
+
+.loginButtonDiv a{
+    width: 100%;
+    display: flex;
+}
+
+.subContentDiv button {
+    width: 100px;
+    height: 30px;
+    margin: auto;
+}

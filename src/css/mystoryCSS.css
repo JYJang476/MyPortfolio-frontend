@@ -1,0 +1,192 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+.sch_parent {
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 45px;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    float: left;
+}
+
+.sch_parent input[type=text] {
+    width: calc(100% - 42px);
+    height: 80%;
+    border: none;
+    padding-left: 10px;
+    background-color: transparent;
+}
+
+.sch_go {
+    padding-right: 10px;
+}
+
+.list_header {
+    width: 100%;
+    height: 40px;
+    background-color: #27C190;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list_header div {
+    text-align: center;
+    color: white;
+    line-height: 40px;
+}
+
+.list_header div:nth-child(1),
+.list_item div:nth-child(1){
+    width: 10%;
+}
+.list_header div:nth-child(2),
+.list_item div:nth-child(2){
+    width: 70%;
+}
+.list_header div:nth-child(3),
+.list_item div:nth-child(3){
+    width: 20%;
+}
+
+.sch_area {
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.list_content {
+    width: 100%;
+    height: calc(100% - 40px);
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.list_item {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.list_item div {
+    text-align: center;
+    line-height: 40px;
+}
+
+.ListArea {
+    width: 35%;
+    height: 100%;
+}
+
+.ViewArea {
+    width: 65%;
+    height: 100%;
+    margin-left: 2.5%;
+}
+
+.storyArea {
+    width: 90%;
+    height: 92vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.viewHeader {
+    width: 100%;
+    height: 40px;
+    background-color: #27C190;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dateDiv {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dateDiv div {
+    color: white;
+    height: 40%;
+    text-align: center;
+}
+
+.titleDiv {
+    width: 70%;
+    height: 90%;
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titleHeader {
+    width: 10%;
+    height: 100%;
+    color: white;
+    line-height: calc(40px * 0.8);
+    margin-left: 10px;
+}
+
+.titleContent {
+    width: 90%;
+    height: 100%;
+    color: white;
+    line-height: calc(40px * 0.8);
+}
+
+.dateHeader {
+    width: 100%;
+    height: 20%;
+}
+
+.dateContent {
+    width: 100%;
+    height: 80%;
+}
+
+.viewContent {
+    width: 100%;
+    height: 100%;
+}
+
+.boardList {
+    height: calc(100% - 5% - 10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.contentArea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paddingArea {
+    width: 95%;
+    padding-left: 2.5%;
+    padding-top: 10px;
+}
+
+.myContent {
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border: none;
+    height: calc(100% - 5% - 10px);
+    width: 100%;
+}

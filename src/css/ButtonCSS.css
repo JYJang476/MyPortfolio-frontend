@@ -1,0 +1,12 @@
+.ButtonStyle {
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 45px;
+    border: none;
+    color: black;
+}
+
+.ButtonStyle:active {
+    background-color: #27C190;
+    color: white;
+}
