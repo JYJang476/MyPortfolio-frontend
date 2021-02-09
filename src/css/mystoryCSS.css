@@ -57,6 +57,7 @@ html {
 
 .sch_area {
     margin-bottom: 10px;
+    margin-top: 10px;
     width: 90%;
 }
 
@@ -83,6 +84,16 @@ html {
     line-height: 40px;
 }
 
+.list_item:hover {
+    background-color: #EBEBEB;
+}
+
+.list_item:active {
+    background-color: #005277;
+    color: white;
+}
+
+
 .ListArea {
     width: 35%;
     height: 100%;
@@ -96,7 +107,7 @@ html {
 
 .storyArea {
     width: 90%;
-    height: 92vh;
+    height: 80vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

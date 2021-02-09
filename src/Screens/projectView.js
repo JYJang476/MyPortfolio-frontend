@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 import Button from '../Components/button';
 import Nav from './nav';
 import '../css/projectView.css';
+import axios from "axios";
+import ReactDOM from 'react-dom';
 
+const axiosObj = axios.create({
+    baseURL: 'http://3.89.44.193/api/',
+});
+
+class LinkButton extends Component {
+    render() {
+        return (
+            <div id={this.props.id} className="linkParent">
+                <div className="linkContent">{this.props.content}</div>
+            </div>
+        )
+    }
+}
 
 class SlideComponent extends Component {
-    thispage = 1;
-
     LeftSlide() {
         if(this.thispage == 1)
             return;
@@ -14,10 +27,104 @@ class SlideComponent extends Component {
         let contentElement = document.getElementsByClassName("Content")[0];
     }
 
+    PrtPage(slideList) {
+        ReactDOM.render(
+            <div className="Page">
+                {slideList.map((d, idx) => {
+                    return (
+                        <span className="PageItem">{idx + 1}</span>
+                    );
+                })}
+            </div>
+        , document.getElementsByClassName('PageParent')[0]);
+    }
+
+    DeleteLink() {
+        let link = document.getElementById("linkButton");
+
+        if(link != undefined)
+            link.remove();
+    }
+
+    ShowLink(id, no) {
+        return axiosObj({
+            url : "ppt/story",
+            method : "get",
+            params : {
+                "projId" : id,
+                "pptNo" : no
+            },
+            responseType: 'json'
+        }).then((response) => {
+            ReactDOM.render(
+                <LinkButton id="linkButton" content={response.data.title}/>
+            , document.getElementsByClassName("Content")[0]);
+
+            let link = document.getElementById("linkButton");
+
+            link.onclick = () => {
+                window.location.href = "/mystory/view/" + response.data.id;
+            }
+        }).catch((error) => {
+            this.DeleteLink();
+        });
+    }
+
+    ChangeSlide(id, prjid, count) {
+        let contentObj = document.getElementsByClassName('Content')[0];
+
+        contentObj.style = 'background-image: url("http://3.89.44.193/image/'
+            + id + '")';
+
+        this.ShowLink(prjid, count);
+    }
+
+    InitSlide(id) {
+        axiosObj({
+            url: 'image/list',
+            method: 'get',
+            params: {
+                'id': id
+            },
+
+
+        }).then((response) => {
+            let jsonData = response.data;
+            let pageCount = 0;
+            let contentObj = document.getElementsByClassName('Content')[0];
+            this.PrtPage(jsonData);
+
+            this.ChangeSlide(jsonData[pageCount].id,
+                            jsonData[0].img_projid, pageCount);
+            contentObj.style = 'background-image: url("http://3.89.44.193/image/' + jsonData[pageCount].id + '")';
+
+            let rightArrow = document.getElementsByClassName('rightArrow')[0];
+            rightArrow.onclick = () => {
+                if(jsonData.length > ++pageCount) {
+                    this.ChangeSlide(jsonData[pageCount].id,
+                        jsonData[0].img_projid, pageCount);
+                }
+            }
+
+            let leftArrow = document.getElementsByClassName('leftArrow')[0];
+            leftArrow.onclick = () => {
+                if(jsonData.length > --pageCount) {
+                    this.ChangeSlide(jsonData[pageCount].id,
+                        jsonData[0].img_projid, pageCount);
+                }
+            }
+        });
+    }
+
     render() {
+        this.InitSlide(this.props.pptId);
         return (
           <div className="ContentMain">
-              <div className="leftArrow"></div>
+              <div className="leftArrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28.032" height="54.292" viewBox="0 0 28.032 54.292">
+                      <path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M19.7,33.333,38.254,12.806a4.161,4.161,0,0,0,0-5.479,3.283,3.283,0,0,0-4.963,0L12.271,30.585a4.178,4.178,0,0,0-.1,5.35l21.107,23.42a3.287,3.287,0,0,0,4.963,0,4.161,4.161,0,0,0,0-5.479Z" transform="translate(-11.251 -6.194)"/>
+                  </svg>
+              </div>
               <div className="ImgArea">
                   <div className="Head">
                       <div className="EditButton">
@@ -27,15 +134,16 @@ class SlideComponent extends Component {
                       </div>
                   </div>
                   <div className="Content">
-                      <img src={this.props.src} alt=""/>
+                      <img id='slide' alt=""/>
                   </div>
-                  <div className="Page">
-                      <div className="PageItem">1</div>
-                      <div className="PageItem">2</div>
-                      <div className="PageItem">3</div>
+                  <div className="PageParent">
                   </div>
               </div>
-              <div className="rightArrow"></div>
+              <div className="rightArrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28.032" height="54.292" viewBox="0 0 28.032 54.292">
+                      <path id="Icon_ionic-ios-arrow-forward" data-name="Icon ionic-ios-arrow-forward" d="M30.828,33.332,12.276,12.8a4.162,4.162,0,0,1,0-5.48,3.294,3.294,0,0,1,4.963,0L38.258,30.584a4.179,4.179,0,0,1,.1,5.35L17.253,59.357a3.287,3.287,0,0,1-4.963,0,4.162,4.162,0,0,1,0-5.48Z" transform="translate(-11.246 -6.196)"/>
+                  </svg>
+              </div>
           </div>
         );
     }
@@ -45,7 +153,7 @@ const projectView = ({match}) => {
     return (
         <div>
             <Nav/>
-            <SlideComponent src="https://placeimg.com/540/540/any"/>
+            <SlideComponent pptId={match.params.id} src=""/>
         </div>
     );
 }

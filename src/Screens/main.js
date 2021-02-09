@@ -16,7 +16,7 @@ class aaa extends Component {
                             <p>관리자이시면 로그인을 해주세요</p>
                         </div>
                         <div className="loginButtonDiv">
-                            <a href="">
+                            <a href="login">
                                 <Button className='mainbuttonStyle' value='로그인'/>
                             </a>
                         </div>

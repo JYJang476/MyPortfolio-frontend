@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="54.88.49.184" id="cce8ee7f-9dc1-4803-adca-b7d02f8cc14d" keyPath="C:\encfile\my_key.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+      <sshConfig host="3.85.8.222" id="cce8ee7f-9dc1-4803-adca-b7d02f8cc14d" keyPath="C:\encfile\my_key.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
     </configs>
   </component>
 </project>

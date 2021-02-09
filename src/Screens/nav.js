@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 import '../css/nav.css';
 
+
 class Nav extends Component {
     render() {
         return (
             <div>
                 <div className="navDiv">
-                    <a href="/index">
+                    <a href="/">
                         <div className="leftDiv">
                             Home
                         </div>

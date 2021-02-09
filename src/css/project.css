@@ -1,7 +1,7 @@
 .imgBoxDiv {
     margin-bottom: 10px;
-    width: 28%;
-    height: 48%;
+    width: 128px;
+    height: 128px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -10,13 +10,15 @@
 .imgBoxDiv img {
     background-color: white;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
-    border-radius: 45px;
     border: none;
-
+    width: 128px;
+    height: 128px;
 }
 
 .imgTitle {
     text-align: center;
+    font-size: 0.8em;
+    padding-top: 5px;
 }
 
 .prjContent {
