@@ -11,7 +11,7 @@ class Login extends Component {
         let id = document.getElementById("id").value;
         let pw = document.getElementById("pw").value;
 
-        axios.post("http://3.85.8.222/login", {
+        axios.post("http://34.229.244.71/login", {
             email: id,
             password: pw
         }).then((response) => {

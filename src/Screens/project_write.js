@@ -6,7 +6,7 @@ import axios from "axios";
 import ReactDOM from 'react-dom';
 
 const axiosObj = axios.create({
-    baseURL: 'http://3.89.44.193/api/',
+    baseURL: 'http://34.229.244.71/api/',
 });
 
 

@@ -6,7 +6,7 @@ import axios from "axios";
 import ReactDOM from 'react-dom';
 
 const axiosObj = axios.create({
-    baseURL: 'http://3.89.44.193/api/',
+    baseURL: 'http://34.229.244.71/api/',
 });
 
 class LinkButton extends Component {
@@ -73,7 +73,7 @@ class SlideComponent extends Component {
     ChangeSlide(id, prjid, count) {
         let contentObj = document.getElementsByClassName('Content')[0];
 
-        contentObj.style = 'background-image: url("http://3.89.44.193/image/'
+        contentObj.style = 'background-image: url("http://34.229.244.71/image/'
             + id + '")';
 
         this.ShowLink(prjid, count);
@@ -96,7 +96,7 @@ class SlideComponent extends Component {
 
             this.ChangeSlide(jsonData[pageCount].id,
                             jsonData[0].img_projid, pageCount);
-            contentObj.style = 'background-image: url("http://3.89.44.193/image/' + jsonData[pageCount].id + '")';
+            contentObj.style = 'background-image: url("http://34.229.244.71/image/' + jsonData[pageCount].id + '")';
 
             let rightArrow = document.getElementsByClassName('rightArrow')[0];
             rightArrow.onclick = () => {

@@ -5,7 +5,7 @@ import '../css/mystoryIO.css';
 import axios from "axios";
 
 const axiosObj = axios.create({
-    baseURL: "http://3.89.44.193/"
+    baseURL: "http://34.229.244.71/"
 });
 
 class Mystory_write extends Component {
