@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import Button from '../Components/button';
 import Nav from './nav';
 import '../css/mainCSS.css';
 
-class aaa extends Component {
+class Main extends Component {
     render() {
         return (
             <div>
                 <Nav/>
+                <div className="msgDiv">
+                    <div className="gradientDiv">
+                    </div>
+                    <div className="msgContentDiv">
+                        <p>한계를 모르는 개발자</p>
+                        <a href="project">
+                            <button className='mainbuttonStyle'>프로젝트</button>
+                        </a>
+                    </div>
+                </div>
                 <div className="mainDiv">
                     <div className="subContentDiv">
-                        <div className="msgDiv">
-                            <p>안녕하십니까 장주영의 홈페이지입니다.</p>
-                            <p>방문을 환영합니다.</p>
-                            <p>관리자이시면 로그인을 해주세요</p>
-                        </div>
                         <div className="loginButtonDiv">
-                            <a href="login">
-                                <Button className='mainbuttonStyle' value='로그인'/>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -27,4 +28,4 @@ class aaa extends Component {
     }
 }
 
-export default aaa;
+export default Main;

@@ -1,0 +1,70 @@
+.desScript {
+    height: 120px;
+    width: 440px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stackDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.stackItem {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    align-items: center;
+}
+
+.arrow {
+    border-top: 8px solid transparent;
+    border-left: 8px solid green;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.article {
+    width: 80px;
+    padding-left: 10px;
+    background: linear-gradient(to left, transparent 95%, green 10px);
+}
+
+.description {
+    width: 300px;
+    text-align: left;
+}
+
+.descriptionDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desHeader {
+    width: 440px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.profileDiv {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.profileImg {
+    width: 300px;
+    height: 300px;
+}

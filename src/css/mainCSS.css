@@ -1,11 +1,31 @@
 .mainbuttonStyle {
-    width: 150px;
-    height: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: #4ba992;
+    color: white;
+    font-size: 36px;
 }
 
 .subContentDiv p {
     text-align: center;
+}
 
+.gradientDiv {
+    width: 100%;
+    height: 100%;
+    opacity: 30%;
+    background-color: #141518;
+}
+
+.msgContentDiv {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    opacity: 100%;
+    text-align: center;
+    top: 250px;
+    color: white;
+    font-family: Roboto,sans-serif;
 }
 
 .loginButtonDiv {

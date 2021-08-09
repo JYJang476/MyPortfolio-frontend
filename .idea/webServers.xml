@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="2bf70946-42b6-474f-8caa-72c7b1faf47a" name="myweb" url="http://54.92.175.125">
-        <fileTransfer rootFolder="/var/www/html/MyWeb" accessType="SFTP" host="54.92.175.125" port="22" sshConfigId="cce8ee7f-9dc1-4803-adca-b7d02f8cc14d" sshConfig="ubuntu@54.92.175.125:22 key" keyPair="true">
+        <fileTransfer rootFolder="/var/www/html/MyPortfolio-backend" accessType="SFTP" host="54.175.101.123" port="22" sshConfigId="cce8ee7f-9dc1-4803-adca-b7d02f8cc14d" sshConfig="ubuntu@54.175.101.123:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

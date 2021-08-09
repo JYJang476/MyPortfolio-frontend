@@ -1,11 +1,24 @@
 * {
     box-sizing: border-box;
 }
-.ContentMain {
-    width: 60%;
+
+body {
     height: calc(100% - 8vh);
+}
+
+.MainArea {
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.ContentMainIO {
+    width: 700px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 30px;
 }
 
 .title {
@@ -24,7 +37,7 @@
 
 .content {
     width: 100%;
-    height: 500px;
+    height: 100%;
     margin-top: 10px;
 }
 .content textarea {
@@ -44,5 +57,40 @@
     margin-top: 20px;
 }
 
+/*TagEditor*/
+.TagBackground {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
 
+.TagItem {
+    height: 100%;
+    line-height: 16px;
+    display: flex;
+    justify-content: space-between;
+    background-color: violet;
+    padding: 2px;
+    margin: 0px 10px;
+}
+
+.TagDelete {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.TagList {
+    height: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+#TagInput {
+    height: 100%;
+    border: none;
+    width: 100%;
+}
 

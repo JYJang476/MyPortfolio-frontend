@@ -6,17 +6,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-
-class HelloMessage extends React.Component {
-    render() {
-        return (
-            <div>
-            </div>
-        );
-    }
-}
-
-
 ReactDOM.render(
     <BrowserRouter>
       <App/>

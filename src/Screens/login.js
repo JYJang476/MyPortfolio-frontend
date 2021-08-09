@@ -4,31 +4,54 @@ import Button from '../Components/button';
 import Nav from './nav';
 import '../css/mainCSS.css';
 import '../css/loginCSS.css';
+import * as config from '../config';
 import axios from "axios";
+import cookie from 'react-cookies';
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+
+        this.GoLogin = this.GoLogin.bind(this);
+    }
+
     GoLogin() {
         let id = document.getElementById("id").value;
         let pw = document.getElementById("pw").value;
 
-        axios.post("http://34.229.244.71/login", {
-            email: id,
-            password: pw
+        axios({
+            method: "post",
+            url: config.HOST + "api/auth/login",
+            data: {
+                id: id,
+                pw: pw
+            }
         }).then((response) => {
-            console.log("성공");
+            cookie.save("token", response.data);
+            this.props.history.push("/");
         }).catch((msg) => {
-            ReactDOM.render(
-                <p>아이디 비밀번호가 잘못되었습니다.</p>
-            , document.getElementsByClassName("errorDiv")[0]);
+            if(msg.response) {
+                // 로그인 실패
+                if (msg.response.status = 404)
+                    ReactDOM.render(
+                        <p>아이디 비밀번호가 잘못되었습니다.</p>
+                        , document.getElementsByClassName("errorDiv")[0]);
+                else if (msg.response.status == 403) // 토큰 유효성 에러
+                {
+                    alert('세션시간이 만료되었습니다.');
+                    this.props.history.push("/");
+                }
+            }
         });
     }
+
     render() {
         return (
             <div>
                 <Nav/>
                 <div className="mainDiv">
                     <div className="subContentDiv">
-                        <div className="msgDiv">
+                        <div className="LoginMsgDiv">
                             <p>로그인 페이지 입니다.</p>
                         </div>
                         <div className="errorDiv"></div>
