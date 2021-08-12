@@ -164,43 +164,23 @@ class Board extends Component {
     }
 
     ClickTag(obj, tag) {
-        try {
-            if (this.state.isClick == true) {
-                if(obj.classList[0] == "CloudDiv") {
-                    this.GoSearch(tag);
-                    obj.parentElement.parentElement.removeChild(obj.parentElement);
-                }
+        let cloudDiv = document.getElementsByClassName("GoSchDiv");
 
-                this.setState({
-                    isClick: false
-                })
-            } else if (document.getElementsByClassName("CloudDiv").length == 0) {
-                let newDiv = document.createElement("div");
-                ReactDOM.render(
-                    <div className="GoSchDiv">
-                        <div className="CloudDiv">태그로 검색</div>
-                    </div>
-                    , newDiv);
-                obj.appendChild(newDiv)
-                this.setState({
-                    isClick: true
-                });
-            } else {
-                obj.removeChild(obj.childNodes[1]);
+        if(cloudDiv.length > 0)
+            obj.parentElement.removeChild(cloudDiv[0].parentElement);
+        else {
+            let newDiv = document.createElement("div");
+            ReactDOM.render(
+                <div className="GoSchDiv">
+                    <div className="CloudDiv">태그로 검색</div>
+                </div>
+                , newDiv);
+
+            newDiv.onclick = () => {
+                this.GoSearch(tag);
+                obj.parentElement.removeChild(cloudDiv[0].parentElement);
             }
-        }catch(e) {
-            if(e.name == "TypeError") {
-                let newDiv = document.createElement("div");
-                ReactDOM.render(
-                    <div className="GoSchDiv">
-                        <div className="CloudDiv">태그로 검색</div>
-                    </div>
-                    , newDiv);
-                obj.appendChild(newDiv)
-                this.setState({
-                    isClick: true
-                });
-            }
+            obj.parentElement.appendChild(newDiv);
         }
     }
 }
@@ -264,14 +244,18 @@ class MyContent extends Board {
                     <div dangerouslySetInnerHTML={{ __html:this.props.content }} className="paddingArea">
 
                     </div>
-                    <div className="tagDiv">
-                        {
-                            this.props.tag.map((d, idx) => {
-                                return (
-                                    <div className="tagItem" onClick={(obj) => this.ClickTag(obj.target, d.tag)}>{d.tag}</div>
-                                )
-                            })
-                        }
+
+                    <div className="tagParent">
+                        <div className="tagTitle">태그</div>
+                        <div className="tagDiv">
+                            {
+                                this.props.tag.map((d, idx) => {
+                                    return (
+                                        <div className="tagItem" onClick={(obj) => this.ClickTag(obj.target, d.tag)}>#{d.tag}</div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

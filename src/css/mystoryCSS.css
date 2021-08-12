@@ -187,8 +187,9 @@ html {
     width: 100px;
     height: 40px;
     position: relative;
-    top: -70px;
-    right: 15px;
+    bottom: 25px;
+    right: 60px;
+    cursor: pointer;
 }
 
 .CloudDiv {
@@ -201,6 +202,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 30px;
 }
 
 .CloudDiv:after {
@@ -210,10 +212,6 @@ html {
     border-bottom: 0px solid transparent;
     content:"";
     width: 0px;
-}
-
-.CloudDiv:active {
-    background-color: #4ba992;
 }
 
 .ListArea {
@@ -365,24 +363,40 @@ html {
 
 .tagDiv {
     width: 100%;
-    height: 50px;
+    height: 100%;
     line-height: 50px;
     display: flex;
 }
 
-.tagItem {
-    margin-left: 10px;
+.tagParent {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tagTitle {
     width: 70px;
     height: 30px;
-    background-color: yellow;
     line-height: 30px;
+    margin-left: 20px;
+    border-right: 1px solid #4ba992;
+
+}
+
+.tagItem {
+    margin-left: 10px;
+    height: 100%;
+    line-height: 50px;
     text-align: center;
     cursor: pointer;
+    color: violet;
 }
 
 .tagItem:active {
-    background-color: violet;
-
+    color: violet;
 }
 
 /*scrollbar*/
